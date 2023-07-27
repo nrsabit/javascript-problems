@@ -104,13 +104,35 @@ function basicCalculator(num1, num2, operator) {
       default:
         return "Invalid operator";
     }
-  }else{
-    return "Please take 2 numbers and a valid operator. "
+  } else {
+    return "Please take 2 numbers and a valid operator. ";
   }
 }
 
-const resultOfBasicCalculator = basicCalculator(7, 5, "-")
+const resultOfBasicCalculator = basicCalculator(7, 5, "-");
 // console.log(resultOfBasicCalculator)
+
+// 6- Function that generates a random password of a specific length provided by parameter. The password includes a mix of uppercase letters, lowercase letters, numbers, and special characters.
+function generateRandomPassword(passwordLength) {
+  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  const numberChars = "0123456789";
+  const specialChars = "!@#$%^&*()_-+=<>?";
+
+  const allChars = uppercaseChars + lowercaseChars + numberChars + specialChars;
+
+  let password = "";
+  for (let i = 0; i < passwordLength; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomIndex];
+  }
+
+  return password;
+}
+
+const password = generateRandomPassword(32);
+// console.log(password);
+
 
 
 
