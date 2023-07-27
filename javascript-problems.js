@@ -68,7 +68,6 @@ function findTwoIndexesWithSumOfTarget(sortedArray, target) {
 
   while (leftIndex < rightIndex) {
     const sum = sortedArray[leftIndex] + sortedArray[rightIndex];
-    console.log(sortedArray[leftIndex], sortedArray[rightIndex], sum);
 
     if (sum === target) {
       return [leftIndex, rightIndex];
@@ -86,3 +85,32 @@ const resultOfTwoIndexesOfTarget = findTwoIndexesWithSumOfTarget(
   12
 );
 // console.log(resultOfTwoIndexesOfTarget);
+
+// 5- create a function for a basic calculatior with only +, -, *, / operators
+function basicCalculator(num1, num2, operator) {
+  if ((num1, num2, operator)) {
+    switch (operator) {
+      case "+":
+        return num1 + num2;
+      case "-":
+        return num1 - num2;
+      case "*":
+        return num1 * num2;
+      case "/":
+        if (num2 === 0 || num1 === 0) {
+          return "Cannot divide by zero";
+        }
+        return num1 / num2;
+      default:
+        return "Invalid operator";
+    }
+  }else{
+    return "Please take 2 numbers and a valid operator. "
+  }
+}
+
+const resultOfBasicCalculator = basicCalculator(7, 5, "-")
+// console.log(resultOfBasicCalculator)
+
+
+
