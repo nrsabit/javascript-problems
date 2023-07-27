@@ -165,6 +165,18 @@ function romanToInt(romanNumber) {
 const resultOfRomanToInt = romanToInt("CXXIII"); // it would be 123
 // console.log(resultOfRomanToInt);
 
+// 8- Function to find the second smallest number in a number array.
+function findSecondSmallestNumber(arr) {
+  if (!Array.isArray(arr) || arr.length < 2) {
+    return "Please provide an array which contains at least 2 numbers.";
+  }
 
+  arr.sort(function (a, b) {
+    return a - b;
+  });
 
-// 8- Function to find the second smallest number in a number array. 
+  return arr[1];
+}
+
+const resultOfSecondSmallestNumber = findSecondSmallestNumber([5, 32, 98, 76, 54])
+// console.log(resultOfSecondSmallestNumber)
