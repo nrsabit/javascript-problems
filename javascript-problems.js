@@ -133,6 +133,38 @@ function generateRandomPassword(passwordLength) {
 const password = generateRandomPassword(32);
 // console.log(password);
 
+// 7- Function that converts a Roman numeral to an integer.
+function romanToInt(romanNumber) {
+  const romanNumbersMap = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let result = 0;
+
+  for (let i = 0; i < romanNumber.length; i++) {
+    const currentNumeralValue = romanNumbersMap[romanNumber[i]];
+    const nextNumeralValue = romanNumbersMap[romanNumber[i + 1]];
+
+    if (nextNumeralValue > currentNumeralValue) {
+      result += nextNumeralValue - currentNumeralValue;
+      i++;
+    } else {
+      result += currentNumeralValue;
+    }
+  }
+
+  return result;
+}
+
+const resultOfRomanToInt = romanToInt("CXXIII"); // it would be 123
+// console.log(resultOfRomanToInt);
 
 
 
+// 8- Function to find the second smallest number in a number array. 
