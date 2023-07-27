@@ -30,7 +30,6 @@ const resultOfPositiveNumbers = sumOfPositiveNumbers([5, -0, 3, -9, 10]);
 
 // 3- function for finding the most frequent item in an array.
 function findTheMostFrequentElement(arr) {
-
   // checking if the parameter is array or not, also checking if it has items or not
   if (!Array.isArray(arr) || arr.length === 0) {
     return null;
@@ -57,8 +56,33 @@ function findTheMostFrequentElement(arr) {
   return mostFrequentElement;
 }
 
-const resultOfMostFrequentElement = findTheMostFrequentElement([4, 5, 2, 4, 7, 9, 4])
+const resultOfMostFrequentElement = findTheMostFrequentElement([
+  4, 5, 2, 4, 7, 9, 4,
+]);
 // console.log(resultOfMostFrequentElement)
 
+// 4- function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indexes of the two numbers.
+function findTwoIndexesWithSumOfTarget(sortedArray, target) {
+  let leftIndex = 0;
+  let rightIndex = leftIndex + 1;
 
+  while (leftIndex < rightIndex) {
+    const sum = sortedArray[leftIndex] + sortedArray[rightIndex];
+    console.log(sortedArray[leftIndex], sortedArray[rightIndex], sum);
 
+    if (sum === target) {
+      return [leftIndex, rightIndex];
+    } else if (sum < target) {
+      leftIndex++;
+      rightIndex++;
+    }
+  }
+
+  return null; // if 2 values not found that are the same as the target after sum then return null
+}
+
+const resultOfTwoIndexesOfTarget = findTwoIndexesWithSumOfTarget(
+  [2, 5, 4, 8, 9, 11],
+  12
+);
+// console.log(resultOfTwoIndexesOfTarget);
